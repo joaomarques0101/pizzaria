@@ -1,0 +1,530 @@
+/* Reset básico e definição de box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis globais */
+:root {
+    --primary-color: #800000;    /* Vermelho escuro sofisticado */
+    --secondary-color: #1a1a1a;   /* Fundo escuro */
+    --accent-color: #ff4d4d;      /* Destaque */
+    --text-color: #ffffff;        /* Texto branco */
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos globais para o corpo */
+body {
+    font-family: var(--font-family);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Estilos para links globais */
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+/* Container do cabeçalho – ficará sobre o vídeo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo do site */
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Menu de navegação */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li a {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* Efeito de hover para links do cabeçalho */
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Banner com vídeo de fundo */
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Vídeo de fundo do banner */
+.banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Conteúdo do banner */
+.banner .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner .banner-content h1 {
+    font-size: 60px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.banner .banner-content p {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+/* Botão principal do banner */
+.banner .banner-content .btn-primary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+    font-size: 20px;
+    color: var(--text-color);
+    background: var(--primary-color);
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.banner .banner-content .btn-primary:hover {
+    background: var(--accent-color);
+}
+
+/* Seção do cardápio */
+section#menu {
+    padding: 100px 5%;
+    background: #111;
+    text-align: center;
+}
+
+section#menu h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Grid de itens do cardápio */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Cada item do cardápio */
+.menu-item {
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-item .item-info {
+    padding: 20px;
+}
+
+.menu-item .item-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu-item .item-info p {
+    font-size: 16px;
+}
+
+/* Seção Sobre */
+section#sobre {
+    padding: 100px 5%;
+    background: #1e1e1e;
+    text-align: center;
+}
+
+section#sobre h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+section#sobre p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Seção de Contato */
+section#contato {
+    padding: 100px 5%;
+    background: #111;
+    text-align: center;
+}
+
+section#contato h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+section#contato p,
+section#contato a {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Botão para contato/WhatsApp */
+section#contato .btn-contact {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 20px;
+    color: var(--text-color);
+    background: var(--primary-color);
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+section#contato .btn-contact:hover {
+    background: var(--accent-color);
+}
+
+/* Animação para fade-in geral */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplicando animação a seções com classe .animar */
+.animar {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Transições suaves para botões e links */
+.btn-primary,
+.btn-contact,
+header nav ul li a {
+    transition: all 0.3s ease;
+}
+
+/* Estilo para quando elementos entram na visualização (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Quando a classe .ativo é adicionada, o efeito ocorre */
+.reveal.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries para dispositivos menores */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+    header nav ul {
+        gap: 20px;
+    }
+    .banner .banner-content h1 {
+        font-size: 45px;
+    }
+    .banner .banner-content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    section#menu h2,
+    section#sobre h2,
+    section#contato h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner .banner-content h1 {
+        font-size: 35px;
+    }
+    .banner .banner-content p {
+        font-size: 16px;
+    }
+}
+
+/* Estilo para modais e janelas pop-up */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #222;
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+/* Efeito de sombra e brilho para elementos destacados */
+.highlight {
+    box-shadow: 0 0 15px var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+/* Estilos para componentes customizados (ex: cards de promoção) */
+.card {
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-body h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card-body p {
+    font-size: 16px;
+}
+
+/* Finalizando com um rodapé avançado */
+footer {
+    background: #000;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+footer a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo do menu principal */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  /* Estilo do menu para desktop */
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Gap reduzido de 100px para 20px */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+  
+  .menu a:hover {
+    background: red;
+    border-radius: 5px;
+  }
+  
+  /* Ícone de hambúrguer (oculto para desktop) */
+  .hamburguer {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Botão de fechar dentro do menu (oculto inicialmente) */
+  .menu .close {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    /* Exibe o ícone de hambúrguer e posiciona-o no canto esquerdo */
+    .hamburguer {
+      display: block;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      z-index: 1001;
+    }
+  
+    /* Menu mobile que desliza da esquerda */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 50%;
+      background: rgb(0, 0, 0);
+      flex-direction: column;
+      padding-top: 60px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+      z-index: 1000;
+      gap: 10px;
+    }
+  
+    .menu li {
+      padding: 15px 0;
+      text-align: center;
+    }
+  
+    .menu a {
+      display: block;
+      padding: 15px;
+    }
+  
+    /* Estado ativo: Menu desliza para dentro, hambúrguer some e botão de fechar é exibido */
+    nav.active .menu {
+      transform: translateX(0);
+    }
+  
+    nav.active .hamburguer {
+      display: none;
+    }
+  
+    nav.active .menu .close {
+      display: block;
+      margin-top: auto;
+    }
+  
+    /* Botão de fechar ajustado para ser menor e vermelho */
+    .menu .close a {
+      font-size: 20px;
+      padding: 10px;
+      color: red;
+      /* Se desejar fundo vermelho e texto branco, descomente as próximas linhas:
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+      */
+    }
+  }
+  

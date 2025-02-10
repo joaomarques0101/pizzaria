@@ -1,0 +1,154 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+/* Banner principal */
+#contato-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Seção de Contato */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 10%;
+    gap: 30px;
+}
+
+/* Estilo das caixas de informações e formulário */
+.contact-info, .contact-form {
+    background: #2a2a2a;
+    padding: 30px;
+    width: 45%;
+    min-width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilização do formulário */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    background: #e63946;
+    border: none;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #b22222;
+}
+
+/* Estilização das informações de contato */
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: #e63946;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.social-media {
+    margin-top: 15px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 10px;
+}
+
+.social-media img {
+    width: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Mapa */
+.map-section {
+    padding: 50px 10%;
+    text-align: center;
+    background: #1a1a1a;
+}
+
+.map-section h2 {
+    color: #e63946;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+}

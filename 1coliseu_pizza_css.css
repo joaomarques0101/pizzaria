@@ -1,0 +1,272 @@
+/* ===================================================== */
+/*              RESET & ESTILOS GLOBAIS                */
+/* ===================================================== */
+
+/* Reset básico e definição de box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais */
+:root {
+  --primary-color: #800000;       /* Vermelho escuro sofisticado */
+  --secondary-color: #1a1a1a;      /* Fundo escuro */
+  --accent-color: #ff4d4d;         /* Destaque (vermelho) */
+  --text-color: #ffffff;          /* Texto branco */
+  --font-family: 'Poppins', sans-serif;
+  --max-width: 1200px;
+}
+
+/* Fonte global e fundo */
+body {
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Links globais */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Contêiner central para alinhar conteúdos */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================================== */
+/*                    CABEÇALHO FIXO                   */
+/* ===================================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.25rem 3.125rem; /* 20px 50px */
+  z-index: 1000;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.75rem; /* 28px */
+  font-weight: bold;
+  color: var(--primary-color);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.875rem; /* 30px */
+}
+nav ul li a {
+  font-size: 1.125rem; /* 18px */
+  color: var(--text-color);
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* ===================================================== */
+/*             BANNER DA PÁGINA CARDÁPIO               */
+/* ===================================================== */
+
+.banner.cardapio-banner {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 80px; /* Espaço para o cabeçalho fixo */
+}
+.banner.cardapio-banner .banner-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+.banner.cardapio-banner .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-color);
+}
+.banner.cardapio-banner .banner-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.625rem; /* 10px */
+}
+.banner.cardapio-banner .banner-content p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* ===================================================== */
+/*           NAVEGAÇÃO DAS CATEGORIAS (CARDÁPIO)         */
+/* ===================================================== */
+
+.cardapio-categories {
+  background: var(--secondary-color);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+.categories-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.875rem; /* 30px */
+  list-style: none;
+}
+.categories-nav ul li a {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+.categories-nav ul li a.active,
+.categories-nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* ===================================================== */
+/*           CONTEÚDO PRINCIPAL (CARDÁPIO)             */
+/* ===================================================== */
+
+main {
+  padding: 2.5rem 5%;
+}
+.cardapio-section {
+  padding: 3.75rem 0; /* 60px */
+  background: var(--secondary-color);
+  display: none;
+}
+.cardapio-section.active {
+  display: block;
+}
+.cardapio-section h2 {
+  font-size: 2.25rem; /* 36px */
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+/* ===================================================== */
+/*             GRID DE ITENS DO CARDÁPIO               */
+/* ===================================================== */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.875rem; /* 30px */
+}
+.menu-item {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+.menu-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.item-info {
+  padding: 1.25rem; /* 20px */
+}
+.item-info h3 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.625rem; /* 10px */
+  color: var(--primary-color);
+}
+.item-info p {
+  font-size: 1rem; /* 16px */
+}
+
+/* ===================================================== */
+/*                        RODAPÉ                      */
+/* ===================================================== */
+
+footer {
+  background: #000;
+  padding: 2.5rem 1.25rem; /* 40px 20px */
+  text-align: center;
+  font-size: 0.875rem; /* 14px */
+  color: #777;
+  margin-top: 2.5rem; /* 40px */
+}
+footer a {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--primary-color);
+}
+
+/* ===================================================== */
+/*                   RESPONSIVIDADE                    */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.9375rem; /* 15px */
+    margin-top: 1rem;
+  }
+  .banner.cardapio-banner .banner-content h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  .banner.cardapio-banner .banner-content p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+  .categories-nav ul {
+    flex-direction: column;
+    gap: 0.9375rem; /* 15px */
+  }
+  
+  /* Estilos para o botão de fechar no menu mobile */
+  .menu .close a {
+    font-size: 0.875rem;         /* Tamanho de fonte reduzido (aprox. 14px) */
+    padding: 0.5rem 1rem;          /* Espaçamento interno */
+    color: var(--text-color);     /* Texto branco */
+    background-color: var(--accent-color); /* Fundo vermelho (utilizando a variável de destaque) */
+    border: 2px solid #ffffff;     /* Contorno branco */
+    border-radius: 5px;            /* Bordas arredondadas */
+    text-decoration: none;
+  }
+}
+@media (max-width: 768px) {
+  /* Outros ajustes responsivos já existentes... */
+  
+  /* Estilos para o botão de fechar no menu mobile */
+  .menu .close a {
+    font-size: 0.875rem;         /* Tamanho de fonte reduzido (aprox. 14px) */
+    padding: 0.5rem 1rem;          /* Espaçamento interno menor */
+    color: var(--text-color);     /* Texto branco */
+    background-color: var(--accent-color); /* Fundo vermelho (utilizando a variável de destaque) */
+    border: 2px solid #ffffff;     /* Contorno branco */
+    border-radius: 5px;            /* Bordas levemente arredondadas */
+    text-decoration: none;
+  }
+}

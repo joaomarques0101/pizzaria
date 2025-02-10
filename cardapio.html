@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio | Coliseu Pizza e Lanche</title>
+  <!-- Link para o CSS extenso (dividido em 5 partes) -->
+  <link rel="stylesheet" href="1coliseu_pizza_css.css">
+  <!-- Importação da fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo adicional para a página de Cardápio */
+    .banner.cardapio-banner {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    .banner.cardapio-banner .banner-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .banner.cardapio-banner .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--text-color);
+    }
+    .cardapio-categories {
+      background: var(--secondary-color);
+      padding: 20px 0;
+    }
+    .categories-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+    .categories-nav ul li a {
+      color: var(--text-color);
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .categories-nav ul li a.active,
+    .categories-nav ul li a:hover {
+      color: var(--accent-color);
+    }
+    /* Garante que cada seção fique com espaçamento adequado */
+    .cardapio-section {
+      padding: 60px 5%;
+      background: var(--secondary-color);
+      display: none;
+    }
+    .cardapio-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho fixo -->
+
+  <!-- Banner para a página de Cardápio -->
+  <section class="banner cardapio-banner" id="banner-cardapio">
+    <img src="coliseu.png" alt="Banner Cardápio" class="banner-bg">
+    <div class="banner-content">
+      <h1>Nosso Cardápio</h1>
+      <p>Descubra nossas deliciosas opções</p>
+    </div>
+  </section>
+
+  <!-- Filtro de Categorias -->
+  <section class="cardapio-categories">
+    <nav class="categories-nav">
+      <ul>
+        <li><a href="#pizzas" class="category-link active">Pizzas</a></li>
+        <li><a href="#lanches" class="category-link">Lanches</a></li>
+        <li><a href="#drinks" class="category-link">Drinks</a></li>
+        <li><a href="#pizzasdoces" class="category-link">Pizzas Doces</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- Conteúdo do Cardápio -->
+  <main>
+    <!-- Seção de Pizzas (4 itens) -->
+    <section id="pizzas" class="cardapio-section active">
+      <h2>Pizzas</h2>
+      <div class="menu-grid">
+        <div class="menu-item animar">
+          <img src="pizza6.jpg" alt="Pizza Margherita">
+          <div class="item-info">
+            <h3>Pizza Margherita</h3>
+            <p>Mozzarella, tomate fresco e manjericão.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="pizza2.jpg" alt="Pizza Pepperoni">
+          <div class="item-info">
+            <h3>Pizza Pepperoni</h3>
+            <p>Deliciosa pizza com pepperoni picante e queijo extra.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="pizza3.jpg" alt="Pizza Quatro Queijos">
+          <div class="item-info">
+            <h3>Pizza Quatro Queijos</h3>
+            <p>Um mix de queijos para os verdadeiros amantes.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="pizza5.jpg" alt="Pizza Calabresa">
+          <div class="item-info">
+            <h3>Pizza Calabresa</h3>
+            <p>Calabresa, cebola e azeitonas, um clássico irresistível.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Lanches (4 itens) -->
+    <section id="lanches" class="cardapio-section">
+      <h2>Lanches</h2>
+      <div class="menu-grid">
+        <div class="menu-item animar">
+          <img src="1.jpg" alt="Lanche Especial">
+          <div class="item-info">
+            <h3>Lanche Especial</h3>
+            <p>Lanche artesanal com ingredientes frescos e exclusivos.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="2.jpg" alt="Lanche Duplo">
+          <div class="item-info">
+            <h3>Lanche Duplo</h3>
+            <p>Dupla de carne, queijo e molho especial.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="3.jpg" alt="Lanche Vegetariano">
+          <div class="item-info">
+            <h3>Lanche Vegetariano</h3>
+            <p>Opção leve e saborosa com legumes frescos.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Drinks (3 itens) -->
+    <section id="drinks" class="cardapio-section">
+      <h2>Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item animar">
+          <img src="5.jpg" alt="Refrigerante Gelado">
+          <div class="item-info">
+            <h3>Refrigerante Gelado</h3>
+            <p>Refrescante e sempre na medida certa.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="6.jpg" alt="Suco Natural">
+          <div class="item-info">
+            <h3>Suco Natural</h3>
+            <p>Feito com frutas frescas para um sabor autêntico.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="7.jpg" alt="Água com Gás">
+          <div class="item-info">
+            <h3>Água com Gás</h3>
+            <p>Leve e refrescante, ideal para acompanhar sua refeição.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Pizzas Doces (4 itens) -->
+    <section id="pizzasdoces" class="cardapio-section">
+      <h2>Pizzas Doces</h2>
+      <div class="menu-grid">
+        <div class="menu-item animar">
+          <img src="9.jpg" alt="Pizza Doce Brigadeiro">
+          <div class="item-info">
+            <h3>Pizza Doce Brigadeiro</h3>
+            <p>Sabor intenso com chocolate e granulado.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="10.jpg" alt="Pizza Doce de Chocolate">
+          <div class="item-info">
+            <h3>Pizza Doce de Chocolate</h3>
+            <p>Para os apaixonados por chocolate!</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="11.jpg" alt="Pizza Doce Banana com Canela">
+          <div class="item-info">
+            <h3>Pizza Doce Banana com Canela</h3>
+            <p>Banana caramelizada e um toque de canela.</p>
+          </div>
+        </div>
+        <div class="menu-item animar">
+          <img src="pexels-guto-macedo-72150916-8444542.jpg" alt="Pizza Doce Morango com Chocolate">
+          <div class="item-info">
+            <h3>Pizza Doce Morango com Chocolate</h3>
+            <p>Frescor dos morangos com a doçura do chocolate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Coliseu Pizza e Lanche. Todos os direitos reservados.</p>
+    <p>
+      <a href="privacidade.html">Política de Privacidade</a> | 
+      <a href="termos.html">Termos de Uso</a>
+    </p>
+  </footer>
+
+  <!-- Script para controle dos filtros de categorias -->
+  <script>
+    const categoryLinks = document.querySelectorAll('.category-link');
+    const sections = document.querySelectorAll('.cardapio-section');
+
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Remove a classe 'active' dos links
+        categoryLinks.forEach(link => link.classList.remove('active'));
+        // Adiciona a classe 'active' no link clicado
+        e.target.classList.add('active');
+
+        // Exibe somente a seção correspondente à categoria selecionada
+        const targetId = e.target.getAttribute('href').substring(1);
+        sections.forEach(section => {
+          if (section.getAttribute('id') === targetId) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
